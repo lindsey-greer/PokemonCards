@@ -18,8 +18,16 @@ header {
 .logo {
      width: 30%;
     height: auto;
-    /* img {
-        width:30%;
-        height:auto;
-    } */
+}
+
+#viewButton, #addButton{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    font-size: .8rem;
+    font-weight: bolder;
+    border: none;
+    margin-top: 30px;
 }
