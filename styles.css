@@ -29,7 +29,7 @@ header {
     font-size: .8rem;
     font-weight: bolder;
     border: none;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .pokeContainer {
@@ -37,3 +37,77 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+.scene {
+    width: 260px;
+    height: 310px;
+    border: none;
+    margin: 30px;
+    perspective: 600px;
+    border-radius: 15px;
+  }
+  
+  .card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+  
+  }
+  
+  .card.is-flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    backface-visibility: hidden;
+    
+    
+  }
+  
+  .card__face--front {
+    background: #3767B0;
+    border-radius: 15px;
+    color: white;
+    border: solid 7px #1E2D59;
+  }
+  
+  .card__face--back {
+    background: #F2B90C;
+    transform: rotateY(180deg);
+    border-radius: 15px;
+    color: white;
+    border: solid 7px #F2A30F;
+    
+  }
+  
+  .card__face ul {
+    list-style-type: none;
+    padding-right: 14%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: white;
+  
+  }
+  
+  .card__face p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2rem;
+  }
+  
+  .card__face img {
+    padding-top: 30px;
+    padding-left: 9px;
+  }
+  © 20
+  
+  
