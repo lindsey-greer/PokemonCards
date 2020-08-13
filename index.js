@@ -1,13 +1,14 @@
 let pokeContainer = document.querySelector('.pokeContainer')
 let viewButton = document.querySelector('#viewButton')
-viewButton.addEventListener('click',() => {
-    loadPokemon()
+viewButton.addEventListener('click', () => {
+    loadPage()
 })
 
 let addButton = document.querySelector('#addButton')
-addButton.addEventListener('click', ()=>{
+addButton.addEventListener('click', () => {
     addPokemon()
 })
+
 
 async function getAPIData(url) {
     try {
@@ -20,7 +21,7 @@ async function getAPIData(url) {
     }
 }
 
-function loadPokemon() {
+function loadPage() {
     getAPIData('https://pokeapi.co/api/v2/pokemon/?&limit=25').then(
         (data) => {
             for (const pokemon of data.results) {
@@ -30,6 +31,7 @@ function loadPokemon() {
                     }
                 )
             }
+
         }
     )
 }
@@ -37,7 +39,8 @@ function loadPokemon() {
 function populatePokeCard(singlePokemon) {
     let pokeScene = document.createElement('div')
     pokeScene.className = 'scene'
-    let pokeCard = document.creatElement('div')
+    let pokeCard = document.createElement('div')
+    pokeCard.className = 'card'
     pokeCard.addEventListener('click', function () {
         pokeCard.classList.toggle('is-flipped');
     })
@@ -52,16 +55,16 @@ function populatePokeCard(singlePokemon) {
 
 function populateCardFront(pokemon) {
     let cardFront = document.createElement('div')
-    cardFront.className = 'card_face card_face--front'
+    cardFront.className = 'card__face card__face--front'
 
     let frontImage = document.createElement('img')
-frontImager.src = `../images/${getImageFileName(pokemon)}.png`
-let frontLabel = document.createElement('p')
-frontLabel.textContent = `${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.
-    slice(1)}`
-cardFront.appendChild(frontImage)
-cardFront.appendChild(frontLabel)
-return cardFront
+    frontImage.src = `../images/${getImageFileName(pokemon)}.png`
+    let frontLabel = document.createElement('p')
+    frontLabel.textContent = `${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.
+        slice(1)}`
+    cardFront.appendChild(frontImage)
+    cardFront.appendChild(frontLabel)
+    return cardFront
 }
 
 function getImageFileName(pokemon) {
@@ -87,4 +90,49 @@ function populateCardBack(pokemon) {
     cardBack.appendChild(abilityList)
     cardBack.appendChild(moveList)
     return cardBack
+}
+
+function getPokemonMoves(pokemon, levelLearnedAt) {
+    return pokemon.moves.filter(move => {
+        return move.version_group_details[0].level_learned_at === levelLearnedAt
+    })
+}
+
+
+
+class Pokemon {
+    constructor(height, weight, name, abilities, moves) {
+        this.height = height
+        this.width = weight
+        this.name = name
+        this.abilities = abilities
+        this.moves = moves
+        this.id = 800
+    }
+}
+
+function addPokemon() {
+    let newPokemon = new Pokemon(50, 25, 'Glizzy', [
+        {
+            ability:
+                { name: 'Guzzler' }
+        },
+        {
+            ability:
+                { name: 'Hehe' }
+        }
+        ], 
+        [
+            {
+        move: {
+            name: "Smash"
+        },
+        version_group_details: [
+            {
+                level_learned_at: 0
+            }
+        ]
+    }
+])
+populatePokeCard(newPokemon)
 }
