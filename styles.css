@@ -101,3 +101,10 @@ main {
     font-weight: bolder;
     color: black;
 }
+
+.card__face p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
