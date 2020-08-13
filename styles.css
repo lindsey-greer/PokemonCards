@@ -82,5 +82,14 @@ main {
     border-radius: 15px;
     color: black;
     border: solid 7px;
+
+}
+
+.card__face--back {
+    background: whitesmoke;
+    transform: rotateY(180deg);
+    border-radius: 15px;
+    color: white;
+    border: solid 7px;
     
 }
