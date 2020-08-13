@@ -33,3 +33,13 @@ function loadPage() {
         }
     )
 }
+
+function populatePokeCard(singlePokemon) {
+    let pokeScene = document.createElement('div')
+    pokeScene.className = 'scene'
+    let pokeCard = document.createElement('div')
+    pokeCard.className = 'card'
+    pokeCard.addEventListener('click', function() {
+        pokeCard.classList.toggle('is-flipped');
+    })
+}
