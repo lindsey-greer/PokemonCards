@@ -39,22 +39,20 @@ header {
 }
 
 .scene {
-    width: 260px;
-    height: 310px;
-    border: none;
-    margin: 30px;
+    width: 200px;
+    height: 260px;
+    border: 1px solid #CCC;
+    margin: 40px 0;
     perspective: 600px;
-    border-radius: 15px;
   }
   
   .card {
     width: 100%;
     height: 100%;
     transition: transform 1s;
-    transform-style: preserve-3d;
+  transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
-  
   }
   
   .card.is-flipped {
@@ -65,27 +63,21 @@ header {
     position: absolute;
     width: 100%;
     height: 100%;
+    line-height: 260px;
+    color: white;
     text-align: center;
-    font-size: 1.2rem;
+    font-weight: bold;
+    font-size: 40px;
     backface-visibility: hidden;
-    
-    
   }
   
   .card__face--front {
-    background: #3767B0;
-    border-radius: 15px;
-    color: white;
-    border: solid 7px #1E2D59;
+    background: red;
   }
   
   .card__face--back {
-    background: #F2B90C;
+    background: blue;
     transform: rotateY(180deg);
-    border-radius: 15px;
-    color: white;
-    border: solid 7px #F2A30F;
-    
   }
   
   .card__face ul {
@@ -108,6 +100,4 @@ header {
     padding-top: 30px;
     padding-left: 9px;
   }
-  © 20
-  
   
