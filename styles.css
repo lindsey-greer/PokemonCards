@@ -62,3 +62,8 @@ main {
     position: relative;
 
 }
+
+.card.is-flipped{
+    transform: rotateY(180deg);
+    
+}
