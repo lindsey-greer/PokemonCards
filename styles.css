@@ -1,26 +1,16 @@
-body {
-    margin: 0;
-    width: 100vw;
-    height: 200vh;
+:root {
     background-color: blue;
-    display:flex;
-    flex-direction: column;
-
-}
-header {
-    width: 100vw;
-    height: 25vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo {
-     width: 30%;
-    height: auto;
-}
-
-#viewButton, #addButton{
+  }
+  
+  header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 4%;
+      padding-bottom: 50px,
+  }
+  
+  #addButton, #viewButton{
     background-color: white;
     color: black;
     padding: 10px;
@@ -30,86 +20,82 @@ header {
     font-weight: bolder;
     border: none;
     margin-top: 10px;
-}
-main {
-    display: flex;
-    width: 100vw;
-    height: 175vh;
-    justify-content: center;
-    align-items: center;
-}
-.pokeContainer {
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.scene {
+  }
+  
+  .pokeContainer {
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+  
+  
+  .scene {
     width: 260px;
     height: 310px;
     border: none;
     margin: 30px;
     perspective: 600px;
     border-radius: 15px;
-}
-
-.card {
+  }
+  
+  .card {
     width: 100%;
     height: 100%;
-    transition: transform 2s;
+    transition: transform 1s;
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
-
-}
-
-.card.is-flipped{
+  
+  }
+  
+  .card.is-flipped {
     transform: rotateY(180deg);
-
-}
-
-.card_face {
+  }
+  
+  .card__face {
     position: absolute;
     width: 100%;
     height: 100%;
     text-align: center;
     font-size: 1.2rem;
     backface-visibility: hidden;
-}
-
-.card__face--front {
-    background: white;
+    
+    
+  }
+  
+  .card__face--front {
+    background: #3767B0;
     border-radius: 15px;
-    color: black;
-    border: solid 7px;
-
-}
-
-.card__face--back {
-    background: whitesmoke;
+    color: white;
+    border: solid 7px #000000;
+  }
+  
+  .card__face--back {
+    background: #F2B90C;
     transform: rotateY(180deg);
     border-radius: 15px;
     color: white;
-    border: solid 7px;
-
-}
-
-.card__face ul {
+    border: solid 7px #000000;
+    
+  }
+  
+  .card__face ul {
     list-style-type: none;
     padding-right: 14%;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     color: black;
-}
-
-.card__face p {
+  
+  }
+  
+  .card__face p {
     font-family: Arial, Helvetica, sans-serif;
-    color: blue;
+    color: white;
     font-weight: bolder;
     font-size: 1.2rem;
-}
-
-.card__face img {
+  }
+  
+  .card__face img {
     padding-top: 30px;
     padding-left: 9px;
-}
+  }
